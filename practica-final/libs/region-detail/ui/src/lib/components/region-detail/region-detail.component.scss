@@ -1,4 +1,4 @@
-.region {
+.region-detail {
   display: flex;
   flex-flow: column;
   padding: 16px;
@@ -6,20 +6,23 @@
   border-radius: 4px;
   border: solid 1px #10212e;
 
-  &__code {
+  &__title {
     font-size: 18px;
-    text-align: center;
+    margin-top: 16px;
+  }
+
+  &__code {
+    font-size: 16px;
   }
 
   &__name {
-    margin-bottom: 32px;
     font-size: 16px;
     color: #333;
-    text-align: center;
   }
 
   &__link {
     display: block;
+    margin: 24px 0;
     width: 100%;
     text-align: center;
     color: #fff;

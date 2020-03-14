@@ -187,6 +187,114 @@
           }
         }
       }
+    },
+    "region-view-feature": {
+      "projectType": "library",
+      "root": "libs/region-view/feature",
+      "sourceRoot": "libs/region-view/feature/src",
+      "prefix": "lib",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/region-view/feature/jest.config.js",
+            "tsConfig": "libs/region-view/feature/tsconfig.spec.json",
+            "setupFile": "libs/region-view/feature/src/test-setup.ts"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "eslintConfig": "libs/region-view/feature/.eslintrc.json",
+            "tsConfig": [
+              "libs/region-view/feature/tsconfig.lib.json",
+              "libs/region-view/feature/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/region-view/feature/**"]
+          }
+        }
+      }
+    },
+    "region-view-ui": {
+      "projectType": "library",
+      "root": "libs/region-view/ui",
+      "sourceRoot": "libs/region-view/ui/src",
+      "prefix": "lib",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/region-view/ui/jest.config.js",
+            "tsConfig": "libs/region-view/ui/tsconfig.spec.json",
+            "setupFile": "libs/region-view/ui/src/test-setup.ts"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "eslintConfig": "libs/region-view/ui/.eslintrc.json",
+            "tsConfig": [
+              "libs/region-view/ui/tsconfig.lib.json",
+              "libs/region-view/ui/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/region-view/ui/**"]
+          }
+        }
+      }
+    },
+    "region-detail-feature": {
+      "projectType": "library",
+      "root": "libs/region-detail/feature",
+      "sourceRoot": "libs/region-detail/feature/src",
+      "prefix": "lib",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/region-detail/feature/jest.config.js",
+            "tsConfig": "libs/region-detail/feature/tsconfig.spec.json",
+            "setupFile": "libs/region-detail/feature/src/test-setup.ts"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "eslintConfig": "libs/region-detail/feature/.eslintrc.json",
+            "tsConfig": [
+              "libs/region-detail/feature/tsconfig.lib.json",
+              "libs/region-detail/feature/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/region-detail/feature/**"]
+          }
+        }
+      }
+    },
+    "region-detail-ui": {
+      "projectType": "library",
+      "root": "libs/region-detail/ui",
+      "sourceRoot": "libs/region-detail/ui/src",
+      "prefix": "lib",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/region-detail/ui/jest.config.js",
+            "tsConfig": "libs/region-detail/ui/tsconfig.spec.json",
+            "setupFile": "libs/region-detail/ui/src/test-setup.ts"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "eslintConfig": "libs/region-detail/ui/.eslintrc.json",
+            "tsConfig": [
+              "libs/region-detail/ui/tsconfig.lib.json",
+              "libs/region-detail/ui/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/region-detail/ui/**"]
+          }
+        }
+      }
     }
   },
   "cli": {

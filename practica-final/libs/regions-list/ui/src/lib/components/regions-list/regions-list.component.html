@@ -5,11 +5,11 @@
     </div>
   </div>
   <div class="row" *ngIf="regions && regions.length > 0">
-    <div class="col-12 col-sm-6 col-md-4 mb-4 col-lg-3 lg-3" *ngFor="let region of regions">
-      <div class="region h-100">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let region of regions">
+      <div class="region">
         <h2 class="region__code">{{ region.code }} - {{ region.iso2code }}</h2>
         <p class="region__name">{{ region.name }}</p>
-        <a class="region__link" [routerLink]="['region', region.id]">Ver región</a>
+        <a class="region__link" [routerLink]="['/country', region.code]">Ver región</a>
       </div>
     </div>
   </div>

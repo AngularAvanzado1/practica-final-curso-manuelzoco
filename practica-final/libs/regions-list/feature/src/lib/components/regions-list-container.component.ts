@@ -8,11 +8,17 @@ import { Region } from '@pf/api';
   encapsulation: ViewEncapsulation.None
 })
 export class RegionsListContainerComponent implements OnInit {
-  public _regions: Region[];
+  public _allRegions: Region[] = [];
+  public _regions: Region[] = [];
 
   constructor(private _route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this._regions = this._route.snapshot.data['regions'];
+    this._allRegions = this._route.snapshot.data['regions'];
+    this._allRegions.forEach(region => {
+      if (region.id !== '') {
+        this._regions.push(region);
+      }
+    });
   }
 }

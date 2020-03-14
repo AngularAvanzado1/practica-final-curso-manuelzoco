@@ -18,7 +18,11 @@
     "paths": {
       "@pf/api": ["libs/api/src/public-api"],
       "@pf/regions-list/feature": ["libs/regions-list/feature/src/public-api"],
-      "@pf/regions-list/ui": ["libs/regions-list/ui/src/public-api"]
+      "@pf/regions-list/ui": ["libs/regions-list/ui/src/public-api"],
+      "@pf/region-view/feature": ["libs/region-view/feature/src/public-api"],
+      "@pf/region-view/ui": ["libs/region-view/ui/src/public-api"],
+      "@pf/region-detail/feature": ["libs/region-detail/feature/src/public-api"],
+      "@pf/region-detail/ui": ["libs/region-detail/ui/src/public-api"]
     }
   },
   "exclude": ["node_modules", "tmp"]

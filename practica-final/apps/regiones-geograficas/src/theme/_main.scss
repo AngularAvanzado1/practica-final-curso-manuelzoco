@@ -12,3 +12,15 @@
   font-size: 24px;
   width: 100%;
 }
+
+.go-back {
+  display: block;
+  margin-bottom: 32px;
+  font-size: 18px;
+  color: #10212e;
+
+  &:hover, &:focus, &:active {
+    color: #10212e;
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="main-title">País:</h1>
+    </div>
+  </div>
+  <div class="row" *ngIf="region && region.length > 0">
+    <div class="col-12 col-sm-6 col-md-4" *ngFor="let reg of region">
+      <div class="region-view">
+        <p class="region-view__code">{{ reg.id }} - {{ reg.iso2Code }}</p>
+        <p class="region-view__name">País: {{ reg.name }}</p>
+        <p class="region-view__capital">Capital: {{ reg.capitalCity }}</p>
+        <p class="region-view__location">Lng: {{ reg.longitude }} - Lat: {{ reg.latitude }}</p>
+
+        <h2 class="region-view__title">Región:</h2>
+        <p class="region-view__code">{{ reg.region.id }} - {{ reg.region.iso2code }}</p>
+        <p class="region-view__name">{{ reg.region.value }}</p>
+
+        <h2 class="region-view__title">Región administrativa:</h2>
+        <p class="region-view__code">{{ reg.adminregion.id }} - {{ reg.adminregion.iso2code }}</p>
+        <p class="region-view__name">{{ reg.adminregion.value }}</p>
+
+        <h2 class="region-view__title">Nivel de ingresos:</h2>
+        <p class="region-view__code">{{ reg.incomeLevel.id }} - {{ reg.incomeLevel.iso2code }}</p>
+        <p class="region-view__name">{{ reg.incomeLevel.value }}</p>
+
+        <h2 class="region-view__title">Tipo de préstamo:</h2>
+        <p class="region-view__code">{{ reg.lendingType.id }} - {{ reg.lendingType.iso2code }}</p>
+        <p class="region-view__name">{{ reg.lendingType.value }}</p>
+
+        <a class="region-view__link" [routerLink]="['/country', reg.region.id]">Volver</a>
+      </div>
+    </div>
+  </div>
+</div>
