@@ -7,7 +7,16 @@ import { RegionsListContainerComponent } from './regions-list-container.componen
 
 const ActivatedRouteStub = {
   snapshot: {
-    data: {}
+    data: {
+      regions: [
+        {
+          id: '',
+          code: '',
+          iso2code: '',
+          name: ''
+        }
+      ]
+    }
   }
 };
 
