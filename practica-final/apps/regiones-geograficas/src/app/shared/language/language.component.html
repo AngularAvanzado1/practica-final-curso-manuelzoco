@@ -1,0 +1,12 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="language">
+      <button class="language__item" (click)="useLanguage('en')" [ngClass]="{'language__item--active': activeLanguage === 'en'}" translate>language.english</button>
+      <button class="language__item" (click)="useLanguage('es')" [ngClass]="{'language__item--active': activeLanguage === 'es'}" translate>language.spanish</button>
+    </div>
+    </div>
+  </div>
+</div>
+

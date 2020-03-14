@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { PfApiModule } from '@pf/api';
 import { RegionsListUiModule } from '@pf/regions-list/ui';
@@ -11,7 +12,8 @@ import { RegionsListFeatureRoutingModule } from './regions-list-feature-routing.
   imports: [
     PfApiModule,
     RegionsListFeatureRoutingModule,
-    RegionsListUiModule
+    RegionsListUiModule,
+    TranslateModule
   ],
   exports: []
 })

@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { RegionView } from '@pf/api';
 
 @Component({
@@ -10,7 +11,9 @@ import { RegionView } from '@pf/api';
 export class RegionViewContainerComponent implements OnInit {
   public _regions: RegionView[] = [];
 
-  constructor(private _route: ActivatedRoute) {}
+  constructor(private _route: ActivatedRoute, private translate: TranslateService) {
+    this.translate.setDefaultLang('en');
+  }
 
   ngOnInit(): void {
     this._regions = this._route.snapshot.data['region'];

@@ -1,39 +1,39 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <a class="go-back" [routerLink]="['/']"> < Volver</a>
+      <a class="go-back" [routerLink]="['/']" translate>countries.goBack</a>
     </div>
   </div>
   <div class="row">
     <div class="col-12">
-      <h1 class="main-title">Países:</h1>
+      <h1 class="main-title"><span translate>countries.title</span>:</h1>
     </div>
   </div>
   <div class="row" *ngIf="regions && regions.length > 0">
     <div class="col-12 col-sm-6 col-md-4" *ngFor="let region of regions">
       <div class="region-view">
         <p class="region-view__code">{{ region.id }} - {{ region.iso2Code }}</p>
-        <p class="region-view__name">País: {{ region.name }}</p>
-        <p class="region-view__capital">Capital: {{ region.capitalCity }}</p>
+        <p class="region-view__name"><span translate>countries.country</span>: {{ region.name }}</p>
+        <p class="region-view__capital"><span translate>countries.capitalCity</span>: {{ region.capitalCity }}</p>
         <p class="region-view__location">Lng: {{ region.longitude }} - Lat: {{ region.latitude }}</p>
 
-        <h2 class="region-view__title">Región:</h2>
+        <h2 class="region-view__title"><span translate>countries.region</span>:</h2>
         <p class="region-view__code">{{ region.region.id }} - {{ region.region.iso2code }}</p>
         <p class="region-view__name">{{ region.region.value }}</p>
 
-        <h2 class="region-view__title">Región administrativa:</h2>
+        <h2 class="region-view__title"><span translate>countries.adminRegion</span>:</h2>
         <p class="region-view__code">{{ region.adminregion.id }} - {{ region.adminregion.iso2code }}</p>
         <p class="region-view__name">{{ region.adminregion.value }}</p>
 
-        <h2 class="region-view__title">Nivel de ingresos:</h2>
+        <h2 class="region-view__title"><span translate>countries.incomeLevel</span>:</h2>
         <p class="region-view__code">{{ region.incomeLevel.id }} - {{ region.incomeLevel.iso2code }}</p>
         <p class="region-view__name">{{ region.incomeLevel.value }}</p>
 
-        <h2 class="region-view__title">Tipo de préstamo:</h2>
+        <h2 class="region-view__title"><span translate>countries.lendingType</span>:</h2>
         <p class="region-view__code">{{ region.lendingType.id }} - {{ region.lendingType.iso2code }}</p>
         <p class="region-view__name">{{ region.lendingType.value }}</p>
 
-        <a class="region-view__link" [routerLink]="['/region', region.id]">Ver país</a>
+        <a class="region-view__link" [routerLink]="['/region', region.id]" translate>countries.link</a>
       </div>
     </div>
   </div>

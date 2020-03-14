@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <h1 class="main-title">Welcome to regiones-geograficas!</h1>
+      <h1 class="main-title" translate>geographicRegions.title</h1>
     </div>
   </div>
   <div class="row" *ngIf="regions && regions.length > 0">
@@ -9,13 +9,8 @@
       <div class="region">
         <h2 class="region__code">{{ region.code }} - {{ region.iso2code }}</h2>
         <p class="region__name">{{ region.name }}</p>
-        <a class="region__link" [routerLink]="['/country', region.code]">Ver región</a>
+        <a class="region__link" [routerLink]="['/country', region.code]" translate>geographicRegions.link</a>
       </div>
-    </div>
-  </div>
-  <div class="row" *ngIf="!regions || regions.length < 1">
-    <div class="col-12">
-      <p class="no-regions-available">No hay regiones disponibles</p>
     </div>
   </div>
 </div>

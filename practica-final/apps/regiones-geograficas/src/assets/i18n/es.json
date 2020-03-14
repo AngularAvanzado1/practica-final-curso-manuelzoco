@@ -1,0 +1,32 @@
+{
+  "title": "Regiones geográficas",
+  "language": {
+    "english": "Inglés",
+    "spanish": "Español"
+  },
+  "geographicRegions": {
+    "title": "¡Bienvenido a las regiones geográficas!",
+    "link": "Ver región"
+  },
+  "countries": {
+    "title": "Países",
+    "goBack": "Volver",
+    "country": "País",
+    "capitalCity": "Capital",
+    "region": "Región",
+    "adminRegion": "Región administrativa",
+    "incomeLevel": "Nivel de ingresos",
+    "lendingType": "Tipo de préstamo",
+    "link": "Ver país"
+  },
+  "region": {
+    "title": "País",
+    "country": "País",
+    "capitalCity": "Capital",
+    "region": "Region",
+    "adminRegion": "Región administrativa",
+    "incomeLevel": "Nivel de ingresos",
+    "lendingType": "Tipo de préstamo",
+    "link": "Volver"
+  }
+}

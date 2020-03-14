@@ -5,7 +5,10 @@ import { RegionDetailComponent } from './components/region-detail/region-detail.
 import { RouterModule } from '@angular/router';
 
 @NgModule({
-  imports: [CommonModule, RouterModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+  ],
   declarations: [
     RegionDetailComponent,
   ],
