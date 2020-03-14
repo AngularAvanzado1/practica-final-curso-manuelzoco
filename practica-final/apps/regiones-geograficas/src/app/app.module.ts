@@ -13,7 +13,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { LanguageModule } from './shared/language/language.module';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateLoader {
-  console.log('json!!', new TranslateHttpLoader(http, '/assets/i18n/', '.json'));
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 

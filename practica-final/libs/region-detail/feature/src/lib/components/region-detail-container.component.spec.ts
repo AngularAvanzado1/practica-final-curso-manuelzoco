@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { RegionDetailUiModule } from '@pf/region-detail/ui';
 import { RegionDetailContainerComponent } from './region-detail-container.component';
@@ -17,7 +18,7 @@ describe('RegionDetailContainerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RegionDetailUiModule, RouterTestingModule],
+      imports: [RegionDetailUiModule, RouterTestingModule, TranslateModule.forRoot()],
       declarations: [RegionDetailContainerComponent],
       providers: [
         { provide: ActivatedRoute, useValue: ActivatedRouteStub },
