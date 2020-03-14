@@ -1,0 +1,205 @@
+{
+  "version": 1,
+  "projects": {
+    "regiones-geograficas": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/regiones-geograficas",
+      "sourceRoot": "apps/regiones-geograficas/src",
+      "prefix": "practica-final",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/regiones-geograficas",
+            "index": "apps/regiones-geograficas/src/index.html",
+            "main": "apps/regiones-geograficas/src/main.ts",
+            "polyfills": "apps/regiones-geograficas/src/polyfills.ts",
+            "tsConfig": "apps/regiones-geograficas/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/regiones-geograficas/src/favicon.ico",
+              "apps/regiones-geograficas/src/assets"
+            ],
+            "styles": ["apps/regiones-geograficas/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/regiones-geograficas/src/environments/environment.ts",
+                  "with": "apps/regiones-geograficas/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "regiones-geograficas:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "regiones-geograficas:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "regiones-geograficas:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/regiones-geograficas/tsconfig.app.json",
+              "apps/regiones-geograficas/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/regiones-geograficas/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/regiones-geograficas/jest.config.js",
+            "tsConfig": "apps/regiones-geograficas/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "apps/regiones-geograficas/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "regiones-geograficas-e2e": {
+      "root": "apps/regiones-geograficas-e2e",
+      "sourceRoot": "apps/regiones-geograficas-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/regiones-geograficas-e2e/cypress.json",
+            "tsConfig": "apps/regiones-geograficas-e2e/tsconfig.e2e.json",
+            "devServerTarget": "regiones-geograficas:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "regiones-geograficas:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/regiones-geograficas-e2e/tsconfig.e2e.json"],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/regiones-geograficas-e2e/**"
+            ]
+          }
+        }
+      }
+    },
+    "api": {
+      "projectType": "library",
+      "root": "libs/api",
+      "sourceRoot": "libs/api/src",
+      "prefix": "lib",
+      "architect": {}
+    },
+    "regions-list-feature": {
+      "projectType": "library",
+      "root": "libs/regions-list/feature",
+      "sourceRoot": "libs/regions-list/feature/src",
+      "prefix": "lib",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/regions-list/feature/jest.config.js",
+            "tsConfig": "libs/regions-list/feature/tsconfig.spec.json",
+            "setupFile": "libs/regions-list/feature/src/test-setup.ts"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "eslintConfig": "libs/regions-list/feature/.eslintrc.json",
+            "tsConfig": [
+              "libs/regions-list/feature/tsconfig.lib.json",
+              "libs/regions-list/feature/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/regions-list/feature/**"]
+          }
+        }
+      }
+    },
+    "regions-list-ui": {
+      "projectType": "library",
+      "root": "libs/regions-list/ui",
+      "sourceRoot": "libs/regions-list/ui/src",
+      "prefix": "lib",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/regions-list/ui/jest.config.js",
+            "tsConfig": "libs/regions-list/ui/tsconfig.spec.json",
+            "setupFile": "libs/regions-list/ui/src/test-setup.ts"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "eslintConfig": "libs/regions-list/ui/.eslintrc.json",
+            "tsConfig": [
+              "libs/regions-list/ui/tsconfig.lib.json",
+              "libs/regions-list/ui/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/regions-list/ui/**"]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    }
+  },
+  "defaultProject": "regiones-geograficas"
+}
