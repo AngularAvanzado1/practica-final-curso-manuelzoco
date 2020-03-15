@@ -15,7 +15,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/apps/regiones-geograficas",
+            "outputPath": "dist/regiones-geograficas/browser",
             "index": "apps/regiones-geograficas/src/index.html",
             "main": "apps/regiones-geograficas/src/main.ts",
             "polyfills": "apps/regiones-geograficas/src/polyfills.ts",
@@ -96,6 +96,53 @@
             "tsConfig": "apps/regiones-geograficas/tsconfig.spec.json",
             "passWithNoTests": true,
             "setupFile": "apps/regiones-geograficas/src/test-setup.ts"
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/regiones-geograficas/server",
+            "main": "apps/regiones-geograficas/server.ts",
+            "tsConfig": "apps/regiones-geograficas/tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "apps/regiones-geograficas/src/environments/environment.ts",
+                  "with": "apps/regiones-geograficas/src/environments/environment.prod.ts"
+                }
+              ],
+              "sourceMap": false,
+              "optimization": true
+            }
+          }
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "options": {
+            "browserTarget": "regiones-geograficas:build",
+            "serverTarget": "regiones-geograficas:server"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "regiones-geograficas:build:production",
+              "serverTarget": "regiones-geograficas:server:production"
+            }
+          }
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "browserTarget": "regiones-geograficas:build:production",
+            "serverTarget": "regiones-geograficas:server:production",
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {}
           }
         }
       }
