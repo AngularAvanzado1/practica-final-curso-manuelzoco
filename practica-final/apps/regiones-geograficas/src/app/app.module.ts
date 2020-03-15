@@ -11,6 +11,8 @@ import { AppComponent } from './app.component';
 import { CustomErrorHandler } from './errors/error.handler';
 import { AppRoutingModule } from './app-routing.module';
 import { LanguageModule } from './shared/language/language.module';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateLoader {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -31,7 +33,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateLoader {
           deps: [HttpClient]
       }
     }),
-    LanguageModule
+    LanguageModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     {

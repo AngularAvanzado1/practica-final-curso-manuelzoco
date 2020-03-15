@@ -23,7 +23,8 @@
             "aot": true,
             "assets": [
               "apps/regiones-geograficas/src/favicon.ico",
-              "apps/regiones-geograficas/src/assets"
+              "apps/regiones-geograficas/src/assets",
+              "apps/regiones-geograficas/src/manifest.webmanifest"
             ],
             "styles": ["apps/regiones-geograficas/src/styles.scss"],
             "scripts": []
@@ -55,7 +56,9 @@
                   "maximumWarning": "6kb",
                   "maximumError": "10kb"
                 }
-              ]
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "apps/regiones-geograficas/ngsw-config.json"
             }
           }
         },
